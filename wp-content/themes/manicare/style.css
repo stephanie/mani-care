@@ -1,0 +1,745 @@
+/*
+Theme Name: ManiCare
+Theme URI: http://blankthemes.com/landscape/
+Author: Stephanie Siaw
+Author URI: http://www.stephaniesiaw.com/
+Description: A custom built theme for ManiCare based on Landscape, a simple responsive Wordpress theme.
+Version: 1.0.3
+License: GNU General Public License
+License URI: license.txt
+Tags: white, black, one-column, custom-background, custom-header, flexible-width
+
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Muli:300,400,300italic);
+/* =Reset
+-------------------------------------------------------------- */
+@import url('css/normalize.css');
+@import url('css/foundation.css');
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	border: 0;
+	font-family: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+html {
+	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+	overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */
+	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+}
+body {
+	background: #FFFFFF;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+nav,
+section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+table { /* tables still need 'cellspacing="0"' in the markup */
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	font-weight: normal;
+	text-align: left;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+a:focus {
+	outline: thin dotted;
+}
+a:hover,
+a:active { /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
+	outline: 0;
+}
+a img {
+	border: 0;
+}
+
+
+/* =Global
+----------------------------------------------- */
+
+body,
+button,
+input,
+select,
+textarea {
+	color: #40494D;
+	font-family: 'Muli', sans-serif;
+	font-size: 22px;
+	line-height: 1.5;
+	font-weight: 300;
+}
+
+/* Headings */
+h1,h2,h3,h4,h5,h6 {
+	clear: both;
+	font-family: 'Muli', serif;
+	margin: 0 0 30px 0;
+	font-weight: 400;
+}
+h1{
+	font-size:32px;
+}
+h2{
+	font-size:28px;
+}
+h3{
+	font-size:22px;
+}
+h4{
+	font-size:20px;
+}
+h5{
+	font-size:18px;
+}
+h6{
+	font-size:14px;
+}
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+/* Text elements */
+ul, ol {
+	margin: 1.5em 0 1.5em 3em;
+	line-height:28px;
+}
+ul {
+	list-style: disc;
+}
+ol {
+	list-style: decimal;
+}
+ul ul, ol ol, ul ol, ol ul {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+dt {
+	font-weight: 400;
+}
+dd {
+	margin: 0 1.5em 1.5em;
+}
+b, strong {
+	font-weight: 400;
+}
+dfn, cite, em, i {
+	font-style: italic;
+}
+blockquote {
+	margin: 0 1.5em;
+}
+address {
+	margin: 0 0 1.5em;
+}
+pre {
+	background: #e6e6e6;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 15px;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	padding: 1.6em;
+	overflow: auto;
+	max-width: 100%;
+}
+code, kbd, tt, var {
+	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+abbr, acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+mark, ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+sup,
+sub {
+	font-size: 75%;
+	height: 0;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	bottom: 1ex;
+}
+sub {
+	top: .5ex;
+}
+small {
+	font-size: 75%;
+}
+big {
+	font-size: 125%;
+}
+figure {
+	margin: 0;
+}
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+th {
+	font-weight: 400;
+}
+button,
+input,
+select,
+textarea {
+	font-size: 100%; /* Corrects font size not being inherited in all browsers */
+	margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+	vertical-align: top;
+}
+button,
+input {
+	line-height: normal; /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
+	*overflow: visible;  /* Corrects inner spacing displayed oddly in IE6/7 */
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 0;
+	background: #000;
+	color: #fff;
+	cursor: pointer;
+	font: 700 12px/1 'Muli', sans-serif;
+	letter-spacing: 0.1em;
+	padding: 11px 22px;
+	text-transform: uppercase;
+}
+button:hover,
+html input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover,
+button:focus,
+html input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus{
+	background-color: #333;
+}
+button:active,
+html input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+	background-color: #333;
+	box-shadow: inset 0 0 8px 2px rgba(0, 0, 0, 0.2), 0 1px 0 0 rgba(0, 0, 0, 0.2);
+}
+input[type="checkbox"],
+input[type="radio"] {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box; /* Addresses box sizing set to content-box in IE8/9 */
+	padding: 0; /* Addresses excess padding in IE8/9 */
+	vertical-align: middle;
+}
+input[type="search"] {
+	-webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+	-webkit-appearance: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+	border: 0;
+	padding: 0;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+textarea {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border-radius: 0;
+	color: #111;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+	outline: none;
+	color: #111;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+textarea {
+	font-size: 15px;
+	padding: 7px 3px 8px 7px;
+}
+textarea {
+	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
+	padding: 7px 7px 8px 7px;
+	vertical-align: top; /* Improves readability and alignment in all browsers */
+	width: 100%;
+}
+
+/* Links */
+a,
+a:visited,
+a:active {
+	color: #000;
+	text-decoration: none;
+}
+a:hover,
+a:focus {
+	color: #666;
+}
+
+/* Alignment */
+.alignleft {
+	display: inline;
+	float: left;
+	margin:20px 20px 20px 0;
+}
+.alignright {
+	display: inline;
+	float: right;
+	margin:20px 0 20px 20px;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: 20px auto;
+}
+.alignnone{
+	clear: both;
+	display: block;
+	margin: 20px 0;
+}
+
+/* Text meant only for screen readers */
+.assistive-text {
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+}
+
+
+/* =Container
+----------------------------------------------- */
+
+#wrapper{
+	width:100%;
+}
+#page{
+	max-width:100%;
+	margin:0 auto;
+}
+	
+/* =Page
+----------------------------------------------- */
+
+.masthead {
+	margin-top: 0;
+	padding-bottom: 0;
+	width: 100%;
+	height: 400px;
+	position: relative;
+	background-attachment: fixed;
+	z-index: -99999;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.page-header {
+	width:100%;
+	position:absolute;
+	top:250px;
+}
+
+h1.page-title {
+	color: white;
+	font-size: 65px;
+	font-style: normal;
+	padding-right: 24%;
+	padding-left: 24%;
+	font-weight:normal;
+	position: relative;
+	text-transform: lowercase;
+}
+
+h2.page-description {
+	color: white;
+	padding-right: 24%;
+	padding-left: 24%;
+	font-size: 18px;
+	text-transform: lowercase;
+}
+
+.content-area {
+	padding: 8% 24%;
+	font-size: 16px;
+}
+
+/* =Services
+----------------------------------------------- */
+
+.services.masthead {
+	height: 200px;
+}
+
+.services.page-header {
+	top: 180px;
+	text-align: center;
+}
+
+h1.services.page-title {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.services.content-area {
+	padding: 20px;
+}
+.services-items {
+	padding-left: 9.5%;
+	padding-right: 8%;
+}
+.services-item {
+	min-height: 380px;
+	position: relative;
+}
+
+.item-bg {
+	background: url(images/item1.jpg) no-repeat center;
+	width: 92%;
+	height: 100%;
+	position: absolute;
+}
+
+.item-title {
+	text-align: center;
+	margin-top: 100px;
+	font-size: 32px;
+	line-height: 45px;
+}
+
+.item-footer {
+	position: absolute; 
+	bottom: 0; 
+	left: 0;
+	background-color: rgba(0,0,0,0.5);
+	padding: 12px;
+	font-size: 15px;
+	line-height: 21px;
+	width: 100%;
+	height: 130px;
+	color: white;
+}
+
+/* =Header
+----------------------------------------------- */
+
+.site-header {
+	position: relative;
+	width: 100%;
+	height: 120px;
+	top: 0;
+	left: 0;
+	background:white;
+	z-index: 99999;
+}
+
+.site-header img {
+	height: 100%;
+	padding: 15px;
+}
+
+.site-header .slogan {
+	display: inline-block;
+	top: 50px;
+	position: absolute;
+	margin-left: 15px;
+	font-weight: 300;
+	font-style: italic;
+	font-size: 16px;
+}
+
+nav.main-navigation {
+	float: right;
+	text-transform:uppercase;
+	font-size:16px;
+	padding-top: 25px;
+	display: inline-block;
+	font-weight: 400;
+}
+
+nav.main-navigation ul {
+  display: inline-block;
+  list-style: none;
+  position: absolute;
+  right: 10px;
+}
+nav.main-navigation ul li {
+	display: inline-block;
+	position: relative;
+	margin-right: 2em;
+}
+
+nav.main-navigation ul li a {
+	color: #69C06A;
+}
+
+nav.main-navigation ul li.current-menu-item a {
+	color: #F8B9CE;
+}
+
+/* =Homepage template
+----------------------------------------------- */
+
+.homepage-full {
+	z-index: -99999;
+	background: url(images/bg.jpg) no-repeat center center fixed; 
+	  -webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
+	  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bg.jpg', sizingMethod='scale');
+	  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/bg.jpg', sizingMethod='scale')";
+
+	 /* Set rules to fill background */
+	  min-height: 100%;
+	  min-width: 1024px;
+
+	  /* Set up proportionate scaling */
+	  width: 100%;
+	  height: auto;
+
+	  /* Set up positioning */
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+}
+.homepage-opacity {
+	background: rgba(0,0,0,0.25);
+	z-index: -999;
+	/* Set rules to fill background */
+	 min-height: 100%;
+	 min-width: 1024px;
+
+	 /* Set up proportionate scaling */
+	 width: 100%;
+	 height: auto;
+
+	 /* Set up positioning */
+	 position: fixed;
+	 top: 0;
+	 left: 0;
+}
+.homepage-opacity .homepage-content {
+	position: relative;
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 23%;
+	width: 600px;
+	color: white;
+	font-weight: 400;
+}
+
+.homepage-opacity .homepage-content .homepage-title {
+	font-size: 80px;
+	color: white;
+	text-transform: uppercase;
+}
+
+.homepage-opacity .homepage-content p {
+	font-size: 18px;
+}
+
+/* =Navigation
+----------------------------------------------- */
+
+.page-content .site-navigation {
+	margin: 0 0 1.5em;
+	overflow: hidden;
+}
+.page-content .nav-previous {
+	float: left;
+	width: 50%;
+}
+.page-content .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+
+
+/* =Widgets
+----------------------------------------------- */
+
+#secondary{
+	width:100%;
+	clear:both;
+}
+#left-sidebar{
+	float:left;
+	width:30%;
+	margin:30px 0 60px;
+}
+#middle-sidebar{
+	float:left;
+	width:30%;
+	margin:30px 0 60px 50px;
+}
+#right-sidebar{
+	float:right;
+	width:30%;
+	margin:30px 0 60px;
+}
+.widget {
+	margin: 0 0 20px 0;
+
+}
+.widget ul{
+	margin:0;
+	padding:0;
+}
+.widget ul li{
+	list-style-type:none;
+}
+.widget ul li a{
+	color:#999;
+	text-decoration:none;
+}
+.widget ul li a:hover{
+	color:#000;
+	text-decoration:none;
+}
+.widget-title, .widget-title a{
+	text-align:left;
+	font-size:18px;
+	font-family: georgia, serif;
+	font-weight:bold;
+	margin-bottom: 1.5em;
+	text-decoration:none;
+}
+
+/* Make sure select elements fit in widgets */
+.widget select {
+	max-width: 100%;
+}
+
+/* Search widget */
+#searchsubmit {
+	display: none;
+}
+
+/* Twitter Widget */
+
+.tweets li{
+	margin-bottom:14px;
+}
+
+/* =Footer
+----------------------------------------------- */
+
+#colophon{
+	clear:both;
+	max-width:100%;
+	margin:0 auto;
+	padding:40px;
+	text-align:center;
+	border-top:4px double #e6e6e6;
+	font-size: 12px;
+	
+}
+#colophon a{
+	color:#999;
+	text-decoration:none;
+}
+#colophon a:hover{
+	color:#000;
+	text-decoration:none;
+}
+
+
+/* =Responsive Structure
+----------------------------------------------- */
+
+@media only screen and (max-width: 960px) {
+		
+	#middle-sidebar{
+		float:left;
+		width:25%;
+		margin:30px 0 60px 50px;
+	}
+
+}
+@media only screen and (max-width: 768px) {
+
+	h1.page-title, h2.page-description {
+		padding-right: 10%;
+		padding-left: 10%;
+	}
+
+	.content-area {
+		padding: 20% 8%;
+	}
+
+	#left-sidebar{
+		float:none;
+		width:100%;
+		margin:30px 0 60px;
+	}
+	#middle-sidebar{
+		float:none;
+		width:100%;
+		margin:30px 0 60px;
+	}
+	#right-sidebar{
+		float:none;
+		width:100%;
+		margin:30px 0 60px;
+	}
+	#searchform input#s {
+		background:#fafafa;
+		height: 22px;
+		line-height: 1.2em;
+		padding: 0.2em 2.3em 0.2em 0.6em;
+		width: 80%;
+	}
+}
