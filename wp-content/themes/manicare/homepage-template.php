@@ -16,3 +16,5 @@ get_header(); ?>
 		<div class="homepage-full">
 		</div>
 	<? endwhile; ?>
+
+<?php wp_footer(); ?>
