@@ -16,7 +16,6 @@ get_header(); ?>
 
 	<div id="primary" class="content-area services">
 		<div id="content" class="page-content" role="main">
-			<?= apply_filters('the_content', $post->post_content); ?>
 
 			<ul class="large-block-grid-3 medium-block-grid-2 small-block-grid-1 services-items">
 				<? 
@@ -43,18 +42,22 @@ get_header(); ?>
 						<div class="item-bg">
 							<div class="item-title">
 								<h2><?= $post->post_title; ?></h2>
+								<div class="hr"></div>
 								<h3>$<?= $post->price; ?></h3>
 							</div>
-							<? //if ($post->post_content): ?>
-<!-- 								<div class="item-footer">
-									<span class="item-description"><?= $post->post_content; ?></span>
-								</div> -->
-							<? //endif; ?>
+							<div class="item-subtitle">
+								<p><?= $post->post_content; ?></p>
+								<a href="#" class="button order-btn">Order Now</a>
+							</div>
 						</div>
 					</li>
 				<? endforeach; ?>
 			</ul>
+			<? wp_reset_postdata(); ?>
 
+			<div class="services-description">
+				<?= apply_filters('the_content', $post->post_content); ?>
+			</div>
 		</div><!-- #content .site-content -->
 	</div><!-- #primary .content-area -->
 
