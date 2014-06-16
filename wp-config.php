@@ -31,7 +31,7 @@ if ($_SERVER['SERVER_NAME'] == "mani-care.herokuapp.com") {
 
   define('WP_HOME', 'http://local.mani-care.com');
   define('WP_SITEURL', 'http://local.mani-care.com');
-  define('DB_NAME', 'manicare');
+  define('DB_NAME', 'mani-care');
   define('DB_USER', 'root');
   define('DB_PASSWORD', 'root');
   define('DB_HOST', 'localhost');
