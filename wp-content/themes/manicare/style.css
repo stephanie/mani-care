@@ -437,7 +437,7 @@ h1.services.page-title {
 }
 .services-items {
 	padding-left: 9.5%;
-	padding-right: 8%;
+	padding-right: 9%;
 }
 .services-item {
 	min-height: 300px;
@@ -446,8 +446,8 @@ h1.services.page-title {
 
 .item-bg {
 	background: url(images/item1.jpg) no-repeat center;
-	width: 92%;
-	height: 92%;
+	width: 95%;
+	height: 95%;
 	position: absolute;
 }
 .item-title, .item-subtitle {
@@ -474,7 +474,7 @@ h1.services.page-title {
 	transition: background-color 0.5s ease,
 							color 0.5s ease;
 }
-.item-subtitle:hover {
+.item-subtitle.not-empty:hover {
 	background-color: white;
 	color: #40494D;
 }
@@ -509,20 +509,31 @@ div.hr {
 	margin: 8px auto;
 }
 
-.item-subtitle .button.order-btn {
+.item-subtitle .buttons {
 	position: absolute;
-	bottom: 10px;
+	bottom: 15px;
 	left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  width: auto;
-  font-family: 'Muli', sans-serif;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.item-subtitle .button {
+	font-family: 'Muli', sans-serif;
   text-transform: uppercase;
   font-size: 14px; 
-  width: 135px;
-  background-color: #69C06A;
+  width: 120px;
   color: white;
+  margin: 5px;
+}
+
+.item-subtitle .button.order-btn {
+	background-color: #69C06A;
+}
+
+.item-subtitle .button.pay-btn {
 }
 
 .item-subtitle .button.order-btn:hover {

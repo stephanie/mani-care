@@ -43,11 +43,18 @@ get_header(); ?>
 							<div class="item-title">
 								<h2><?= $post->post_title; ?></h2>
 								<div class="hr"></div>
-								<h3>$<?= $post->price; ?></h3>
+								<h3><?= $post->price; ?></h3>
 							</div>
-							<div class="item-subtitle">
-								<p><?= $post->post_content; ?></p>
-								<a href="#" class="button order-btn">Order Now</a>
+							<? if ($post->post_content != ""): ?>
+								<div class="item-subtitle not-empty">
+									<p><?= $post->post_content; ?></p>
+							<? else: ?>
+								<div class="item-subtitle">
+							<? endif; ?>
+								<div class="buttons">
+									<a href="#" class="button order-btn">Reserve</a>
+									<a href="#" class="button alert pay-btn">Pay Now</a>
+								</div>
 							</div>
 						</div>
 					</li>
@@ -57,6 +64,14 @@ get_header(); ?>
 
 			<div class="services-description">
 				<?= apply_filters('the_content', $post->post_content); ?>
+			</div>
+			<a href="#" data-reveal-id="myModal" id="buttonForModal">Click Me For A Modal</a>
+
+			<div id="myModal" class="reveal-modal" data-reveal>
+			  <h2>Awesome. I have it.</h2>
+			  <p class="lead">Your couch.  It is mine.</p>
+			  <p>Im a cool paragraph that lives inside of an even cooler modal. Wins</p>
+			  <a class="close-reveal-modal">&#215;</a>
 			</div>
 		</div><!-- #content .site-content -->
 	</div><!-- #primary .content-area -->
