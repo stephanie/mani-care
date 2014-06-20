@@ -17,3 +17,5 @@ get_header(); ?>
 		<div class="homepage-full" style="background-image: url('<?= $url; ?>');">
 		</div>
 	<? endwhile; ?>
+
+<? wp_footer(); ?>

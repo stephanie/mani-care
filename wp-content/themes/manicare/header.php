@@ -9,12 +9,12 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
-<meta name="viewport" conlandscapet="width=device-width" />
-<title><?php wp_title( '|', true, 'right' ); ?></title>
-<link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width">
+<title><?php bloginfo('name'); ?></title>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- <link rel="shortcut icon" href="<? //bloginfo('template_directory'); ?>/favicon.ico">
+ -->
 <?php wp_head(); ?>
 </head>
 
@@ -22,13 +22,24 @@
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
 	<header class="site-header" role="banner">
-    <img src="<? bloginfo('template_directory'); ?>/images/logo.png">
-    <p class="slogan">
-      the manicure to show you care
-    </p>
-		<nav role="navigation" class="site-navigation main-navigation">
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-		</nav><!-- .site-navigation .main-navigation -->
+    <div class ="top-nav">
+      <img src="<? bloginfo('template_directory'); ?>/images/logo.png">
+      <p class="slogan">
+        the manicure to show you care
+      </p>
+  		<nav role="navigation" class="site-navigation main-navigation">
+  			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+  		</nav><!-- .site-navigation .main-navigation -->
+    </div>
+    <div class="sub-nav">
+      <p class="reservation-hotline">
+        Reservation Hotline: (973) 760-2325
+      </p>
+      <p class="sub-nav-btns">
+        <span class="fb-link">Follow us on Facebook</span>
+        <a href="#" class="button alert">Pay Now</a>
+      </p>
+    </div>
 	</header><!-- #masthead .site-header -->
 
 <div id="main" class="site-main">

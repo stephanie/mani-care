@@ -155,48 +155,17 @@ add_action( 'wp_head', 'manicare_head');
  * Enqueue scripts and styles
  */
 
-function foundation_scripts() {
-
-  // deregister the jquery version bundled with wordpress
-  wp_deregister_script( 'jquery' );
-
-  // register scripts
-  wp_register_script( 'modernizr', get_template_directory_uri() . '/js/vendor/modernizr.js', array(), '1.0.0', false );
-  wp_register_script( 'jquery', get_template_directory_uri() . '/js/vendor/jquery.js', array(), '1.0.0', false );
-  wp_register_script( 'foundation', get_template_directory_uri() . '/js/foundation/foundation.js', array('jquery'), '1.0.0', true );
-  wp_register_script( 'foundation-init', get_template_directory_uri() . '/js/foundation/foundation-init.js', array('jquery'), '1.0.0', true );
-
-  // enqueue scripts
-  wp_enqueue_script('modernizr');
-  wp_enqueue_script('jquery');
-  wp_enqueue_script('foundation');
-  wp_enqueue_script('foundation-init');
-
-}
-add_action( 'wp_enqueue_scripts', 'foundation_scripts' );
-
-function foundation_custom_scripts() {
-  // if ( is_page_template('services-page.php') ) {
-
-    wp_register_script( 'reveal', get_template_directory_uri() . '/js/foundation/foundation.reveal.js', array('jquery'), '1.0.0', true );
-    wp_register_script( 'manicare', get_template_directory_uri() . '/js/manicare.js', array( 'jquery' ));
-
-    wp_enqueue_script('reveal');
-    wp_enqueue_script('manicare');
-
-  // }
-}
-add_action( 'wp_enqueue_scripts', 'foundation_custom_scripts' );
-
 function manicare_scripts() {
+	// deregister the jquery version bundled with wordpress
+	wp_deregister_script( 'jquery' );
+	
+	// vendor scripts
+  wp_enqueue_style( 'modernizr', get_template_directory_uri() . '/js/vendor/modernizr.js');
+	//custom css & scripts
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
+	wp_enqueue_script( 'small-menu', get_template_directory_uri() . '/js/small-menu.js');
+	wp_enqueue_script('manicare', get_template_directory_uri() . '/js/manicare.js');
 
-	wp_enqueue_script( 'small-menu', get_template_directory_uri() . '/js/small-menu.js', array( 'jquery' ), '20120206', true );
-
-
-	if ( is_singular() && wp_attachment_is_image() ) {
-		wp_enqueue_script( 'keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
-	}
 }
 add_action( 'wp_enqueue_scripts', 'manicare_scripts' );
 
