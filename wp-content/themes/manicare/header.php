@@ -10,11 +10,11 @@
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width">
+<!-- <meta name="viewport" content="width=device-width"> -->
 <title><?php bloginfo('name'); ?></title>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<!-- <link rel="shortcut icon" href="<? //bloginfo('template_directory'); ?>/favicon.ico">
- -->
+<link rel="shortcut icon" href="<? bloginfo('template_directory'); ?>/favicon.ico">
+
 <?php wp_head(); ?>
 </head>
 

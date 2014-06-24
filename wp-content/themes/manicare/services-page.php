@@ -25,21 +25,19 @@ get_header(); ?>
 					'category'         => '',
 					'orderby'          => 'menu_order',
 					'order'            => 'ASC',
-					'include'          => '',
-					'exclude'          => '',
-					'meta_key'         => '',
-					'meta_value'       => '',
 					'post_type'        => 'post',
-					'post_mime_type'   => '',
-					'post_parent'      => '',
 					'post_status'      => 'publish',
 					'suppress_filters' => true 
 				);
 
 				$posts = get_posts( $args ); 
 				foreach ($posts as $post): ?> 
+				<? if ( has_post_thumbnail($post->ID) ): 
+ 						$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
+ 						$thumbnail = $thumbnail[0];
+					endif ?>
 					<li class="services-item">
-						<div class="item-bg">
+						<div class="item-bg" style="background-image: url(<?= $thumbnail ?>);">
 							<div class="item-title">
 								<h2><?= $post->post_title; ?></h2>
 								<div class="hr"></div>
@@ -65,14 +63,7 @@ get_header(); ?>
 			<div class="services-description">
 				<?= apply_filters('the_content', $post->post_content); ?>
 			</div>
-			<a href="#" data-reveal-id="myModal" id="buttonForModal">Click Me For A Modal</a>
 
-			<div id="myModal" class="reveal-modal" data-reveal>
-			  <h2>Awesome. I have it.</h2>
-			  <p class="lead">Your couch.  It is mine.</p>
-			  <p>Im a cool paragraph that lives inside of an even cooler modal. Wins</p>
-			  <a class="close-reveal-modal">&#215;</a>
-			</div>
 		</div><!-- #content .site-content -->
 	</div><!-- #primary .content-area -->
 
