@@ -432,7 +432,7 @@ a:focus {
 	font-weight: 300;
 	font-family: 'Muli', sans-serif;
 }
-.site-header .sub-nav .sub-nav-btns .fb-link {
+.site-header .sub-nav .sub-nav-btns .nav-social {
 	margin-right: 15px;
 }
 .site-header .top-nav img {
@@ -478,7 +478,49 @@ a:focus {
 .top-nav nav.main-navigation ul li.current-menu-item a {
 	color: #F8B9CE;
 }
+a.nav-phone, a.nav-phone:hover {
+	color: white;
+}
 
+a .social-icon {
+	margin-left: 15px;
+	font-size: 24px;
+	color: white;
+}
+
+a .social-icon.fa-facebook-square:hover {
+	color: #3B5998;
+}
+
+a .social-icon.fa-instagram:hover {
+	color: #517FA4;
+}
+
+div#nav-paypal {
+	position: absolute;
+	width: auto;
+	height: auto;
+	background-color: white;
+	border: 1px solid #999;
+	padding: 18px 15px;
+	top: 154px;
+	right: 0;
+	text-align: center;
+	z-index: 99999999;
+}
+
+#nav-paypal tr:nth-of-type(even) {
+	background-color: transparent;
+}
+#nav-paypal select {
+	height: 35px;
+	margin-bottom: -10px;
+	width: auto;
+	padding-right: 30px;
+}
+#nav-paypal table tr th, #nav-paypal table tr td {
+	font-size: 15px;
+}
 
 /* =Homepage template
 ----------------------------------------------- */
@@ -769,7 +811,7 @@ span.or-form-divider {
 	color: #E83B54;
 }
 
-select {
+.forms select {
 	margin-bottom: 15px;
 	height: 37px;
 	width: auto;
@@ -777,7 +819,7 @@ select {
 	padding-right: 22px;
 }
 
-input[type="text"], input[type="email"], input[type="date"] {
+.forms input[type="text"], .forms input[type="email"], .forms input[type="date"] {
 	font-size: inherit;
 	margin-bottom: 15px;
 	height: 37px;
@@ -785,12 +827,12 @@ input[type="text"], input[type="email"], input[type="date"] {
 	border: 1px solid #cccccc;
 }
 
-input[type="text"], input[type="email"] {
+.forms input[type="text"], .forms input[type="email"] {
 	width: 70%;
 	box-shadow: none;
 }
 
-input[type="text"]#zipcode {
+.forms input[type="text"]#zipcode {
 	width: 200px;
 }
 
@@ -809,18 +851,18 @@ input[type="text"]#zipcode {
     color:    #888;
 }
 
-input[type="date"] {
+.forms input[type="date"] {
 	width: auto;
 	box-shadow: none;
 	font-size: inherit;
 }	
 
-textarea {
+.forms textarea {
 	max-height: 150px;
 	width: 80%;
 }
 
-input[type="submit"] {
+.forms input[type="submit"] {
 	margin-top: 15px;
 	margin-bottom: 15px;
 	font-size: 1.1em;
@@ -845,7 +887,7 @@ input[type="submit"] {
 	font-size: 95%;
 }
 
-input[type="submit"]:hover {
+.forms input[type="submit"]:hover {
 	background-color: #549A55;
 	-webkit-transition: all .4s ease-in-out;
 	transition: all .4s ease-in-out;
