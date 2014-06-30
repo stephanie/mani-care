@@ -551,7 +551,7 @@ div#nav-paypal {
 	  left: 0;
 }
 .homepage-opacity {
-	background: rgba(0,0,0,0.35);
+	background: rgba(0,0,0,0.45);
 	z-index: 1;
 	/* Set rules to fill background */
 	 min-height: 100%;
@@ -596,10 +596,10 @@ div#nav-paypal {
 	width: 100%;
 	height: 400px;
 	position: relative;
-	background-attachment: fixed;
 	z-index: -99999;
 	background-size: cover;
 	background-repeat: no-repeat;
+	background-position: center center;
 }
 
 .page-header {
@@ -637,25 +637,33 @@ h2.page-description {
 }
 
 
-/* =Services
+/* =Basic / Services
 ----------------------------------------------- */
 
-.services.masthead {
+/*.services.masthead {
 	height: 200px;
+}*/
+
+.basic .content-area {
+	padding: 35px 24% 90px;
 }
 
-.services.page-header {
-	top: 210px;
+.basic-header {
 	text-align: center;
 }
 
-h1.services.page-title {
+h1.basic-title {
 	padding-right: 0;
 	padding-left: 0;
+	margin-top: 70px;
+	text-transform: lowercase;
+	color: inherit;
+	font-size: 60px;
+	font-weight: 300;
 }
 
-.services.content-area {
-	padding: 40px 20px;
+.basic .services.content-area {
+	padding: 35px 20px 40px 20px;
 }
 .services-items {
 	padding-left: 9.5%;
@@ -668,10 +676,11 @@ h1.services.page-title {
 
 .item-bg {
 	background-repeat: no-repeat;
-	background-position: center;
+	background-position: center center;
 	width: 95%;
 	height: 95%;
 	position: absolute;
+	background-size: cover;
 }
 .item-title, .item-subtitle {
 	height: 100%;
@@ -687,7 +696,7 @@ h1.services.page-title {
 	padding: 15px; 
 	padding-top: 10%;
 	text-transform: uppercase;
-	background-color: rgba(0,0,0,0.5);
+	background-color: rgba(0,0,0,0.55);
 }
 .item-subtitle {
 	background-color: transparent;
@@ -734,7 +743,7 @@ div.hr {
 
 .item-subtitle .buttons {
 	position: absolute;
-	bottom: 15px;
+	bottom: 25px;
 	left: 0;
   right: 0;
   margin-left: auto;
@@ -747,27 +756,102 @@ div.hr {
 	font-family: 'Muli', sans-serif;
   text-transform: uppercase;
   font-size: 14px; 
-  width: 120px;
-  color: white;
+  width: auto;
+ 	color: #40494D;
+	margin: 5px;
+	border: 1px solid #CFCFCF;
   margin: 5px;
 }
 
 .item-subtitle .button.order-btn {
-	background-color: #69C06A;
+	background-color: white;
 }
 
 .item-subtitle .button.pay-btn {
 }
 
 .item-subtitle .button.order-btn:hover {
-	background-color: #549A55;
-}
+/*	background-color: #CFCFCF;
+*/}
 
 /* =Forms
 ----------------------------------------------- */
 
+/* general contact form 7 styles */
+select {
+	margin-bottom: 15px;
+	height: 37px;
+	width: auto;
+	padding-left: 12px;
+	padding-right: 22px;
+}
+
+input[type="text"], input[type="email"], input[type="date"] {
+	font-size: inherit;
+	margin-bottom: 15px;
+	height: 37px;
+	padding-left: 12px;
+	border: 1px solid #cccccc;
+}
+
+input[type="text"], input[type="email"] {
+	width: 90%;
+	max-width: 400px;
+	box-shadow: none;
+}
+
+input[type="text"]#zipcode {
+	width: 80%;
+	max-width: 200px;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #888;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #888;
+    opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #888;
+    opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #888;
+}
+
+input[type="date"] {
+	width: auto;
+	box-shadow: none;
+	font-size: inherit;
+}	
+
+textarea {
+	max-height: 150px;
+	width: 100%;
+	max-width: 500px;
+}
+
+input[type="submit"] {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	font-size: 1.1em;
+	font-weight: 300;
+	padding: 11px 14px;
+	background-color: #69C06A;
+	letter-spacing: 0;
+}
+
+input[type="submit"]:hover {
+	background-color: #549A55;
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+}
+
+/**/
+
 .content-area.forms {
-	padding: 5% 10%;
+	padding: 5% 0;
 }
 
 .forms .row {
@@ -783,14 +867,17 @@ span.or-form-divider {
 	text-decoration: underline;
 }
 .form-left, .form-right {
-	padding: 0px 80px 0px 0px;
+/*	padding: 0px 80px 0px 0px;
+*/
+	padding: 20px 50px;
 }
 
-.form-left .wpcf7, .form-right .wpcf7 {
+.form-left .form {
 	padding: 20px 30px;
 	border: 1px dotted #CCCCCC;
 }
-.form-left .wpcf7:hover, .form-right .wpcf7:hover {
+
+.form-left .form:hover {
 	background-color: #E1F2E1;
 	-webkit-transition: all .4s ease-in-out;
 	transition: all .4s ease-in-out;
@@ -811,67 +898,6 @@ span.or-form-divider {
 	color: #E83B54;
 }
 
-.forms select {
-	margin-bottom: 15px;
-	height: 37px;
-	width: auto;
-	padding-left: 12px;
-	padding-right: 22px;
-}
-
-.forms input[type="text"], .forms input[type="email"], .forms input[type="date"] {
-	font-size: inherit;
-	margin-bottom: 15px;
-	height: 37px;
-	padding-left: 12px;
-	border: 1px solid #cccccc;
-}
-
-.forms input[type="text"], .forms input[type="email"] {
-	width: 70%;
-	box-shadow: none;
-}
-
-.forms input[type="text"]#zipcode {
-	width: 200px;
-}
-
-::-webkit-input-placeholder { /* WebKit browsers */
-    color:    #888;
-}
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color:    #888;
-    opacity:  1;
-}
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color:    #888;
-    opacity:  1;
-}
-:-ms-input-placeholder { /* Internet Explorer 10+ */
-    color:    #888;
-}
-
-.forms input[type="date"] {
-	width: auto;
-	box-shadow: none;
-	font-size: inherit;
-}	
-
-.forms textarea {
-	max-height: 150px;
-	width: 80%;
-}
-
-.forms input[type="submit"] {
-	margin-top: 15px;
-	margin-bottom: 15px;
-	font-size: 1.1em;
-	font-weight: 300;
-	padding: 11px 14px;
-	background-color: #69C06A;
-	letter-spacing: 0;
-}
-
 .checkbox-container {
 	margin-bottom: 15px;
 }
@@ -887,12 +913,6 @@ span.or-form-divider {
 	font-size: 95%;
 }
 
-.forms input[type="submit"]:hover {
-	background-color: #549A55;
-	-webkit-transition: all .4s ease-in-out;
-	transition: all .4s ease-in-out;
-}
-
 .gift-purchase-page .gift-purchase-content {
 	text-align: center;
 }
@@ -903,21 +923,6 @@ span.or-form-divider {
 #secondary{
 	width:100%;
 	clear:both;
-}
-#left-sidebar{
-	float:left;
-	width:30%;
-	margin:30px 0 60px;
-}
-#middle-sidebar{
-	float:left;
-	width:30%;
-	margin:30px 0 60px 50px;
-}
-#right-sidebar{
-	float:right;
-	width:30%;
-	margin:30px 0 60px;
 }
 .widget {
 	margin: 0 0 20px 0;
@@ -991,44 +996,47 @@ span.or-form-divider {
 
 @media only screen and (max-width: 960px) {
 		
-	#middle-sidebar{
-		float:left;
-		width:25%;
-		margin:30px 0 60px 50px;
+	.basic .services.content-area {
+		padding: 30px 0;
+	}
+
+	h1.basic-title {
+		font-size: 60px;
 	}
 
 }
 @media only screen and (max-width: 768px) {
+
+	h1.basic-title {
+		font-size: 45px;
+	}
 
 	h1.page-title, h2.page-description {
 		padding-right: 10%;
 		padding-left: 10%;
 	}
 
-	.content-area {
-		padding: 20% 8%;
+	h1.page-title {
+		font-size: 55px;
 	}
 
-	#left-sidebar{
-		float:none;
-		width:100%;
-		margin:30px 0 60px;
+	.content-area, .basic .content-area {
+		padding: 10%;
 	}
-	#middle-sidebar{
-		float:none;
-		width:100%;
-		margin:30px 0 60px;
+
+	.content-area img.alignleft, .content-area img.alignright {
+		display: none;
 	}
-	#right-sidebar{
-		float:none;
-		width:100%;
-		margin:30px 0 60px;
+
+	.site-header .sub-nav .sub-nav-btns .button.alert {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 156px;
 	}
-	#searchform input#s {
-		background:#fafafa;
-		height: 22px;
-		line-height: 1.2em;
-		padding: 0.2em 2.3em 0.2em 0.6em;
-		width: 80%;
+
+	div#nav-paypal {
+		top: 192px;
 	}
+
 }

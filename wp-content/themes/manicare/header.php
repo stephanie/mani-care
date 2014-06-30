@@ -30,7 +30,7 @@
       <p class="slogan">
         the manicure to show you care
       </p>
-  		<nav role="navigation" class="site-navigation main-navigation show-for-large-up">
+  		<nav role="navigation" class="site-navigation main-navigation">
   			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
   		</nav><!-- .site-navigation .main-navigation -->
     </div>
@@ -42,10 +42,10 @@
       </p>
       <p class="sub-nav-btns">
         <span class="nav-social">
-          <span class="show-for-medium-up">Follow us on</span><a href="https://www.facebook.com/manicarenyc"><i class="fa fa-facebook-square fa-lg social-icon"></i></a><a href="http://iconosquare.com/manicareny"><i class="fa fa-instagram fa-lg social-icon"></i></a>
+          <span class="show-for-medium-up">Follow us on</span><a href="https://www.facebook.com/manicarenyc" class="show-for-medium-up"><i class="fa fa-facebook-square fa-lg social-icon"></i></a><a href="http://iconosquare.com/manicareny" class="show-for-medium-up"><i class="fa fa-instagram fa-lg social-icon"></i></a>
         </span>
         <a href="#" class="button alert" id="nav-pay-now">
-          Pay Now
+          Order Now
         </a>
         <div id="nav-paypal">
          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
@@ -60,7 +60,7 @@
          </select> </td></tr>
          </table>
          <input type="hidden" name="currency_code" value="USD">
-         <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+         <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
          <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
          </form>
        </div>
