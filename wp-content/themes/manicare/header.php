@@ -10,7 +10,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="utf-8" />
-<!-- <meta name="viewport" content="width=device-width"> -->
+<meta name="viewport" content="width=device-width">
 <title><?php bloginfo('name'); ?></title>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
@@ -20,6 +20,18 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-52723602-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
 	<header class="site-header" role="banner">
@@ -30,7 +42,7 @@
       <p class="slogan">
         the manicure to show you care
       </p>
-  		<nav role="navigation" class="site-navigation main-navigation">
+  		<nav role="navigation" class="site-navigation main-navigation show-for-medium-up">
   			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
   		</nav><!-- .site-navigation .main-navigation -->
     </div>
@@ -42,7 +54,7 @@
       </p>
       <p class="sub-nav-btns">
         <span class="nav-social">
-          <span class="show-for-medium-up">Follow us on</span><a href="https://www.facebook.com/manicarenyc" class="show-for-medium-up"><i class="fa fa-facebook-square fa-lg social-icon"></i></a><a href="http://iconosquare.com/manicareny" class="show-for-medium-up"><i class="fa fa-instagram fa-lg social-icon"></i></a>
+          <span class="show-for-medium-up">Follow us on</span><a href="https://www.facebook.com/manicarenyc" class="show-for-medium-up"><i class="fa fa-facebook-square fa-lg social-icon"></i></a><a href="http://instagram.com/manicareny" class="show-for-medium-up"><i class="fa fa-instagram fa-lg social-icon"></i></a>
         </span>
         <a href="#" class="button alert" id="nav-pay-now">
           Order Now

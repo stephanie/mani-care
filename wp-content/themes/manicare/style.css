@@ -16,6 +16,7 @@ and Blueprint http://www.blueprintcss.org/
 */
 
 @import url(http://fonts.googleapis.com/css?family=Muli:300,400,300italic);
+
 /* =Reset
 -------------------------------------------------------------- */
 @import url('css/normalize.css');
@@ -107,16 +108,14 @@ textarea {
 /* Headings */
 h1,h2,h3,h4,h5,h6 {
 	clear: both;
-	font-family: 'Muli', serif;
-	margin: 0 0 30px 0;
+	font-family: 'Muli', sans-serif;
 }
 h1{
 	font-size:32px;
-	font-weight: 400;
 }
 h2{
-	font-size:28px;
-	font-weight: 400;
+	font-size:27px;
+	margin-bottom: 15px;
 }
 h3{
 	font-size:22px;
@@ -444,16 +443,16 @@ a:focus {
 	display: inline-block;
 	top: 50px;
 	position: absolute;
-	margin-left: 15px;
+	margin-left: 0;
 	font-weight: 300;
 	font-style: italic;
-	font-size: 16px;
+	font-size: 15px;
 }
 
 .top-nav nav.main-navigation {
 	float: right;
 	text-transform:uppercase;
-	font-size:16px;
+	font-size: 16px;
 	padding-top: 25px;
 	display: inline-block;
 	font-weight: 400;
@@ -463,12 +462,12 @@ a:focus {
   display: inline-block;
   list-style: none;
   position: absolute;
-  right: 10px;
+  right: 5px;
 }
 .top-nav nav.main-navigation ul li {
 	display: inline-block;
 	position: relative;
-	margin-right: 2em;
+	margin-right: 18px;
 }
 
 .top-nav nav.main-navigation ul li a {
@@ -567,19 +566,20 @@ div#nav-paypal {
 	 left: 0;
 }
 .homepage-opacity .homepage-content {
-	position: relative;
-	margin: 0 auto;
+	/*position: relative;
+	margin: 0 auto;*/
 	text-align: center;
-	padding-top: 23%;
-	width: 600px;
-	color: white;
-	font-weight: 400;
+	padding-top: 50%;
+/*	width: 600px;
+*/	color: #FDFDFD;
+	font-weight: 300;
 }
 
 .homepage-opacity .homepage-content .homepage-title {
-	font-size: 80px;
-	color: white;
+	color: #FDFDFD;
+	font-size: 84px;
 	text-transform: uppercase;
+	font-weight: 400;
 }
 
 .homepage-opacity .homepage-content p {
@@ -605,37 +605,77 @@ div#nav-paypal {
 .page-header {
 	width:100%;
 	position:absolute;
-	top:250px;
+	top: 255px;
 }
 
 h1.page-title {
-	color: white;
-	font-size: 65px;
+	color: #FDFDFD;
+	font-size: 85px;
+	letter-spacing: -4px;
 	font-style: normal;
-	padding-right: 24%;
-	padding-left: 24%;
-	font-weight:normal;
+	padding-right: 22%;
+	padding-left: 22%;
+	font-weight: 300;
 	position: relative;
 	text-transform: lowercase;
 }
 
 h2.page-description {
-	color: white;
-	padding-right: 24%;
-	padding-left: 24%;
-	font-size: 18px;
+	color: #FDFDFD;
+	padding-right: 22%;
+	padding-left: 22%;
+	margin-left: 5px;
+	font-size: 30px;
 	text-transform: lowercase;
+/*	letter-spacing: -1px; */	
+	margin-top: -15px;
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
 }
-
+.kates-story h1.page-title {
+	color: #69C06A;
+	font-size: 90px;
+	text-align: center;
+	letter-spacing: -5px;
+	margin-top: 30px;
+}
 .content-area {
-	padding: 8% 24%;
+	padding: 8% 22%;
 	font-size: 16px;
 }
-
-.content-area .alignleft {
-	margin: 10px 20px 10px 0;
+.content-area .alignleft.kate-img {
+	margin: 1px 30px 20px 0;
+}
+.content-area .alignleft.acs-img {
+	margin: 0px 22px 10px 0;
+}
+.content-area .alignleft.taylor-img {
+	margin: 20px 22px 10px 0;
+}
+.content-area h3 {
+	text-transform: lowercase;
+	color: #69C06A;
+	letter-spacing: -3px;
+	font-size: 45px;
 }
 
+.content-area h4 {
+	text-transform: lowercase;
+	color: #69C06A;
+	letter-spacing: -1px;
+	font-size: 27px;
+	clear: none;
+}
+
+/* about us */
+p.about-1 {
+	font-size: 14px;
+	font-style: italic;
+	line-height: 20px;
+	margin-bottom: 20px;
+}
+img.alignleft.about-img {
+	margin: 25px 30px 12px 0;
+}
 
 /* =Basic / Services
 ----------------------------------------------- */
@@ -645,7 +685,7 @@ h2.page-description {
 }*/
 
 .basic .content-area {
-	padding: 35px 24% 90px;
+	padding: 35px 22% 90px;
 }
 
 .basic-header {
@@ -655,11 +695,12 @@ h2.page-description {
 h1.basic-title {
 	padding-right: 0;
 	padding-left: 0;
-	margin-top: 70px;
+	margin-top: 48px;
+	margin-bottom: 18px;
 	text-transform: lowercase;
-	color: inherit;
-	font-size: 60px;
-	font-weight: 300;
+	color: #69C06A;
+	font-size: 90px;
+	letter-spacing: -5px;
 }
 
 .basic .services.content-area {
@@ -695,8 +736,16 @@ h1.basic-title {
 	height: 100%;
 	padding: 15px; 
 	padding-top: 10%;
+	background-color: rgba(0,0,0,0.45);
+	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
+}
+.item-title h2 {
 	text-transform: uppercase;
-	background-color: rgba(0,0,0,0.55);
+}
+.content-area .item-title h3 {
+	font-size: 18px;
+	letter-spacing: 0;
+	text-transform: lowercase;
 }
 .item-subtitle {
 	background-color: transparent;
@@ -730,12 +779,13 @@ h1.basic-title {
 
 .services-description {
 	text-align: center;
-	margin-top: 20px;
+	margin-top: 55px;
+	margin-bottom: 35px;
 }
 
 div.hr {
 	background: white no-repeat scroll center;
-	width: 50%;
+	width: 55%;
 	height: 2px;
 	color: white;
 	margin: 8px auto;
@@ -975,7 +1025,7 @@ span.or-form-divider {
 	clear:both;
 	max-width:100%;
 	margin:0 auto;
-	padding:40px;
+	padding:30px;
 	text-align:center;
 	border-top:4px double #e6e6e6;
 	font-size: 12px;
@@ -995,7 +1045,21 @@ span.or-form-divider {
 ----------------------------------------------- */
 
 @media only screen and (max-width: 960px) {
-		
+
+	/* top nav */
+	.site-header .top-nav .slogan {
+		font-size: 14px;
+		margin-left: -5px;
+	}
+
+	.top-nav nav.main-navigation ul li {
+		margin-right: 12px;
+	}
+
+	.top-nav nav.main-navigation ul li a {
+		font-size: 14px;
+	}
+
 	.basic .services.content-area {
 		padding: 30px 0;
 	}
@@ -1007,6 +1071,12 @@ span.or-form-divider {
 }
 @media only screen and (max-width: 768px) {
 
+	.site-header .sub-nav .reservation-hotline {
+		float: none;
+		text-align: center;
+		padding-left: 0;
+	}
+
 	h1.basic-title {
 		font-size: 45px;
 	}
@@ -1017,7 +1087,41 @@ span.or-form-divider {
 	}
 
 	h1.page-title {
-		font-size: 55px;
+		font-size: 3em;
+	}
+
+	h2.page-description {
+		letter-spacing: -1px;
+	}
+
+	.page-header {
+		top: 290px;
+	}
+
+	.content-area h3 {
+		line-height: 45px;
+		margin-bottom: 15px;
+	}
+
+	.home .row {
+		max-width: none;
+	}
+
+	.homepage-opacity .homepage-content {
+		padding-top: 30%;
+		text-align: left;
+		padding-left: 20px;
+		padding-right: 10px;
+	}
+
+	.homepage-opacity .homepage-content .homepage-title {
+		font-size: 65px;
+		font-weight: 300;
+	}
+
+	.homepage-opacity .homepage-content p {
+		font-size: 16px;
+		line-height: 22px;
 	}
 
 	.content-area, .basic .content-area {
@@ -1030,9 +1134,10 @@ span.or-form-divider {
 
 	.site-header .sub-nav .sub-nav-btns .button.alert {
 		position: absolute;
+		margin: 0;
 		left: 0;
 		right: 0;
-		top: 156px;
+		top: 154px;
 	}
 
 	div#nav-paypal {

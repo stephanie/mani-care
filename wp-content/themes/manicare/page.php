@@ -16,7 +16,7 @@ get_header(); ?>
 	<? $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
 	<div class="masthead" style="background-image: url('<?= $url; ?>');">
 	</div>
-	<div class="page-header">
+	<div class="page-header <?= $pagename; ?>">
 		<h1 class="page-title"><? the_title(); ?></h1>
 		<h2 class="page-description"><? the_field('title_subheading'); ?></h2>
 	</div>
