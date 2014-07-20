@@ -69,6 +69,7 @@ function manicare_setup() {
 	 */
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'manicare' ),
+		'footer' => __( 'Footer Menu', 'manicare' )
 	) );
 	
 	add_editor_style();
