@@ -41,6 +41,6 @@ $( document ).ready(function() {
 
   $( "#select-service-item" ).change(function() {
     fill_service_name_hidden();
-  });  
+  });
 
 });

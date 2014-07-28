@@ -58,13 +58,13 @@
         <p class="sub-nav-btns">
           <span class="nav-social">
             <span class="show-for-medium-up">Follow us on</span>
-              <a href="https://www.facebook.com/manicarenyc" class="show-for-medium-up">
+              <a href="https://www.facebook.com/manicarenyc" class="show-for-medium-up" target="_blank">
                 <i class="fa fa-facebook-square fa-lg social-icon"></i>
               </a>
-              <a href="http://instagram.com/manicareny" class="show-for-medium-up">
+              <a href="http://instagram.com/manicareny" class="show-for-medium-up" target="_blank">
                 <i class="fa fa-instagram fa-lg social-icon"></i>
               </a>
-              <a href="https://twitter.com/manicareny" class="show-for-medium-up">
+              <a href="https://twitter.com/manicareny" class="show-for-medium-up" target="_blank">
                 <i class="fa fa-twitter fa-lg social-icon"></i>
               </a>
           </span>

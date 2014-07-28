@@ -159,12 +159,13 @@ add_action( 'wp_head', 'manicare_head');
 function manicare_scripts() {
 	// deregister the jquery version bundled with wordpress
 	wp_deregister_script( 'jquery' );
-	
+
 	// vendor scripts
-  wp_enqueue_style( 'modernizr', get_template_directory_uri() . '/js/vendor/modernizr.js');
+	wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/vendor/jquery.js');
+  wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/js/vendor/modernizr.js');
 	//custom css & scripts
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
-	wp_enqueue_script( 'small-menu', get_template_directory_uri() . '/js/small-menu.js');
+	// wp_enqueue_script( 'small-menu', get_template_directory_uri() . '/js/small-menu.js');
 	wp_enqueue_script('manicare', get_template_directory_uri() . '/js/manicare.js');
 
 }
@@ -240,3 +241,18 @@ function df_disable_comments_admin_bar() {
 	}
 }
 add_action('init', 'df_disable_comments_admin_bar');
+
+/**
+ * Remove Contact Form 7 scripts and styles when shortcode isn't used!
+ */
+function cf7unloaded_deregister_contact_form() {
+	global $post;
+  if ( $post->post_name == 'reserve-now' || $post->post_name == 'contact-us' ) {
+    wp_enqueue_scripts('wpcf7_enqueue_styles');
+    wp_enqueue_scripts('wpcf7_enqueue_scripts');
+  } else {
+  	remove_action('wp_enqueue_scripts', 'wpcf7_enqueue_styles');
+  	remove_action('wp_enqueue_scripts', 'wpcf7_enqueue_scripts');
+  }
+}
+add_action( 'wp', 'cf7unloaded_deregister_contact_form');
