@@ -18,7 +18,7 @@ get_header(); ?>
 
 		<? if (is_page('services')): ?>
 
-			<div id="primary" class="content-area services">
+			<div id="primary" class="content-area">
 				<div id="content" class="page-content" role="main">
 
 					<ul class="large-block-grid-3 medium-block-grid-2 small-block-grid-1 services-items">

@@ -650,10 +650,13 @@ h2.page-description {
 	margin: 1px 30px 20px 0;
 }
 .content-area .alignleft.acs-img {
-	margin: 0px 22px 10px 0;
+	margin: 10px 22px 10px 0;
 }
 .content-area .alignleft.taylor-img {
-	margin: 20px 22px 10px 0;
+	margin: 10px 22px 10px 0;
+}
+.content-area .alignleft.kate-img {
+	margin: 5px 20px 5px 0;
 }
 .content-area h3 {
 	text-transform: lowercase;
@@ -671,6 +674,10 @@ h2.page-description {
 }
 
 /* about us */
+.about-us .content-area {
+	padding: 8% 22% 6% 22%;
+}
+
 p.about-1 {
 	font-size: 14px;
 	font-style: italic;
@@ -678,7 +685,29 @@ p.about-1 {
 	margin-bottom: 20px;
 }
 img.alignleft.about-img {
-	margin: 25px 30px 12px 0;
+	margin: 30px 25px 15px 0;
+}
+
+.testimonials {
+	margin-top: 70px;
+}
+
+blockquote {
+	margin: 0 4.5em;
+	padding: 2.6em 0;
+	position: relative;
+	font-size: 14px;
+}
+
+blockquote:before {
+	content: "“";
+	color: #F8B9CE;
+	font-family: Georgia, serif;
+	font-size: 90px;
+	font-weight: 300;
+	left: -50px;
+	position: absolute;
+	top: -5px;
 }
 
 /* =Basic / Services
@@ -707,7 +736,7 @@ h1.basic-title {
 	letter-spacing: -5px;
 }
 
-.basic .services.content-area {
+.services .basic .content-area {
 	padding: 35px 20px 40px 20px;
 }
 .services-items {
@@ -828,6 +857,21 @@ div.hr {
 /*	background-color: #CFCFCF;
 */}
 
+/* =Basic / FAQs
+----------------------------------------------- */
+
+.faqs .content-area h4 {
+	line-height: 32px;
+	margin-bottom: 5px;
+}
+
+.faqs .content-area p {
+	margin-bottom: 2.5em;
+}
+
+.faqs .basic .content-area {
+	padding-top: 25px;
+}
 /* =Forms
 ----------------------------------------------- */
 
@@ -1047,7 +1091,7 @@ ul#menu-footer-menu li {
 }
 
 #colophon a {
-	color:#999;
+	color:#69C06A;
 	text-decoration:none;
 	margin-right: 15px;
 }
@@ -1077,7 +1121,7 @@ ul#menu-footer-menu li {
 		font-size: 14px;
 	}
 
-	.basic .services.content-area {
+	.services .basic .content-area {
 		padding: 30px 0;
 	}
 
