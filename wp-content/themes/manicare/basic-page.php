@@ -26,6 +26,13 @@ get_header(); ?>
 				<div id="content" class="page-content" role="main">
 					<?= apply_filters('the_content', $post->post_content); ?>
 				</div>
+
+				<? if (is_page('kates-story')): ?>
+
+					<? include(TEMPLATEPATH ."/includes/_charities_partial.php"); ?>
+
+				<? endif; ?>
+
 			</div>
 
 		<? endif; ?>

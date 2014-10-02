@@ -642,13 +642,6 @@ h2.page-description {
 	margin-top: -15px;
 	text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
 }
-.kates-story h1.page-title {
-	color: #69C06A;
-	font-size: 90px;
-	text-align: center;
-	letter-spacing: -5px;
-	margin-top: 30px;
-}
 .content-area {
 	padding: 8% 22%;
 	font-size: 16px;
@@ -678,6 +671,32 @@ h2.page-description {
 	letter-spacing: -1px;
 	font-size: 27px;
 	clear: none;
+}
+
+/* kate's story / charities section */
+
+.kates-story h1.page-title {
+	color: #69C06A;
+	font-size: 90px;
+	text-align: center;
+	letter-spacing: -5px;
+	margin-top: 30px;
+}
+
+.charity-post {
+	margin-top: 5%;
+	min-height: 150px;
+}
+
+.charity-img {
+	float: left;
+	margin-right: 2%;
+	width: 20%;
+}
+
+.charity-description {
+	float: right;
+	width: 78%;
 }
 
 /* about us */

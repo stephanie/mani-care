@@ -14,27 +14,27 @@
         'suppress_filters' => true 
       );
 
-      $posts = get_posts( $args ); 
-      foreach ($posts as $post): ?> 
-      <? if ( has_post_thumbnail($post->ID) ): 
-          $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
+      $services_posts = get_posts( $args ); 
+      foreach ($services_posts as $service_post): ?> 
+      <? if ( has_post_thumbnail($service_post->ID) ): 
+          $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($service_post->ID), 'large' );
           $thumbnail = $thumbnail[0];
         endif ?>
         <li class="services-item">
           <div class="item-bg" style="background-image: url(<?= $thumbnail ?>);">
             <div class="item-title">
-              <h2><?= $post->post_title; ?></h2>
+              <h2><?= $service_post->post_title; ?></h2>
               <div class="hr"></div>
-              <h3><?= $post->price; ?></h3>
+              <h3><?= $service_post->price; ?></h3>
             </div>
-            <? if ($post->post_content != ""): ?>
+            <? if ($service_post->post_content != ""): ?>
               <div class="item-subtitle not-empty">
-                <p><?= $post->post_content; ?></p>
+                <p><?= $service_post->post_content; ?></p>
             <? else: ?>
               <div class="item-subtitle">
             <? endif; ?>
               <div class="buttons">
-                <? $post_title_param = $post->post_title; ?>
+                <? $post_title_param = $service_post->post_title; ?>
                 <? $post_title_param = rawurlencode($post_title_param) ?>
                 <a href="/reserve-now/?service=<?=$post_title_param?>" class="button order-btn">Inquire now</a>
 <!--                  <a href="#" class="button alert pay-btn">Pay Now</a>
@@ -47,7 +47,7 @@
     <? wp_reset_postdata(); ?>
 
     <div class="services-description">
-      <?= apply_filters('the_content', $post->post_content); ?>
+      <?= apply_filters('the_content', $service_post->post_content); ?>
     </div>
 
   </div><!-- #content .site-content -->
