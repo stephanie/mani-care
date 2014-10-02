@@ -83,64 +83,6 @@ endif; // manicare_setup
 add_action( 'after_setup_theme', 'manicare_setup' );
 
 /**
- * Register widgetized area and update sidebar with default widgets
- *
- */
-function manicare_widgets_init() {
-	register_sidebar( array(
-		'name' => __( 'Left Sidebar', 'manicare' ),
-		'id' => 'sidebar-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h1 class="widget-title">',
-		'after_title' => '</h1>',
-	) );
-	register_sidebar( array(
-		'name' => __( 'Middle Sidebar', 'manicare' ),
-		'id' => 'sidebar-2',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h1 class="widget-title">',
-		'after_title' => '</h1>',
-	) );
-	register_sidebar( array(
-		'name' => __( 'Right Sidebar', 'manicare' ),
-		'id' => 'sidebar-3',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h1 class="widget-title">',
-		'after_title' => '</h1>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Homepage Left Sidebar', 'manicare' ),
-		'id' => 'homepage-left-sidebar',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h1 class="widget-title">',
-		'after_title' => '</h1>',
-	) );
-	register_sidebar( array(
-		'name' => __( 'Homepage Middle Sidebar', 'manicare' ),
-		'id' => 'homepage-middle-sidebar',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h1 class="widget-title">',
-		'after_title' => '</h1>',
-	) );
-	register_sidebar( array(
-		'name' => __( 'Homepage Right Sidebar', 'manicare' ),
-		'id' => 'homepage-right-sidebar',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h1 class="widget-title">',
-		'after_title' => '</h1>',
-	) );
-}
-add_action( 'widgets_init', 'manicare_widgets_init' );
-
-
-/**
  * if lt IE 9
  */
 function manicare_head(){
@@ -187,64 +129,10 @@ add_theme_support( 'custom-background', $args );
 require( get_template_directory() . '/inc/custom-header.php' );
 
 
-// Disable support for comments and trackbacks in post types
-function df_disable_comments_post_types_support() {
-	$post_types = get_post_types();
-	foreach ($post_types as $post_type) {
-		if(post_type_supports($post_type, 'comments')) {
-			remove_post_type_support($post_type, 'comments');
-			remove_post_type_support($post_type, 'trackbacks');
-		}
-	}
-}
-add_action('admin_init', 'df_disable_comments_post_types_support');
+//////CUSTOM FUNCTIONS//////
 
-// Close comments on the front-end
-function df_disable_comments_status() {
-	return false;
-}
-add_filter('comments_open', 'df_disable_comments_status', 20, 2);
-add_filter('pings_open', 'df_disable_comments_status', 20, 2);
+/* Remove Contact Form 7 scripts and styles when shortcode isn't used! */
 
-// Hide existing comments
-function df_disable_comments_hide_existing_comments($comments) {
-	$comments = array();
-	return $comments;
-}
-add_filter('comments_array', 'df_disable_comments_hide_existing_comments', 10, 2);
-
-// Remove comments page in menu
-function df_disable_comments_admin_menu() {
-	remove_menu_page('edit-comments.php');
-}
-add_action('admin_menu', 'df_disable_comments_admin_menu');
-
-// Redirect any user trying to access comments page
-function df_disable_comments_admin_menu_redirect() {
-	global $pagenow;
-	if ($pagenow === 'edit-comments.php') {
-		wp_redirect(admin_url()); exit;
-	}
-}
-add_action('admin_init', 'df_disable_comments_admin_menu_redirect');
-
-// Remove comments metabox from dashboard
-function df_disable_comments_dashboard() {
-	remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal');
-}
-add_action('admin_init', 'df_disable_comments_dashboard');
-
-// Remove comments links from admin bar
-function df_disable_comments_admin_bar() {
-	if (is_admin_bar_showing()) {
-		remove_action('admin_bar_menu', 'wp_admin_bar_comments_menu', 60);
-	}
-}
-add_action('init', 'df_disable_comments_admin_bar');
-
-/**
- * Remove Contact Form 7 scripts and styles when shortcode isn't used!
- */
 function cf7unloaded_deregister_contact_form() {
 	global $post;
   if ( $post->post_name == 'reserve-now' || $post->post_name == 'contact-us' ) {
@@ -256,3 +144,71 @@ function cf7unloaded_deregister_contact_form() {
   }
 }
 add_action( 'wp', 'cf7unloaded_deregister_contact_form');
+
+/* Rename posts to services */
+
+function change_post_label() {
+    global $menu;
+    global $submenu;
+    $menu[5][0] = 'Services';
+    $submenu['edit.php'][5][0] = 'Services';
+    $submenu['edit.php'][10][0] = 'Add Service';
+    $submenu['edit.php'][16][0] = 'Services Tags';
+    echo '';
+}
+function change_post_object() {
+    global $wp_post_types;
+    $labels = &$wp_post_types['post']->labels;
+    $labels->name = 'Services';
+    $labels->singular_name = 'Service';
+    $labels->add_new = 'Add Service';
+    $labels->add_new_item = 'Add Service';
+    $labels->edit_item = 'Edit Service';
+    $labels->new_item = 'Service';
+    $labels->view_item = 'View Service';
+    $labels->search_items = 'Search Services';
+    $labels->not_found = 'No Services found';
+    $labels->not_found_in_trash = 'No Services found in Trash';
+    $labels->all_items = 'All Services';
+    $labels->menu_name = 'Services';
+    $labels->name_admin_bar = 'Services';
+}
+ 
+add_action( 'admin_menu', 'change_post_label' );
+add_action( 'init', 'change_post_object' );
+
+/* add Charities post type */
+
+function charities_register() {
+  $labels = array(
+      'name' => _x('Charities', 'post type general name'),
+      'singular_name' => _x('Charity', 'post type singular name'),
+      'add_new' => _x('Add New', 'rep'),
+      'add_new_item' => __('Add New Charity'),
+      'edit_item' => __('Edit Charity'),
+      'new_item' => __('New Charity'),
+      'view_item' => __('View Charity'),
+      'search_items' => __('Search Charities'),
+      'not_found' =>  __('Nothing found'),
+      'not_found_in_trash' => __('Nothing found in Trash'),
+      'parent_item_colon' => ''
+  );
+  $args = array(
+      'labels' => $labels,
+      'public' => true,
+      'publicly_queryable' => true,
+      'show_ui' => true,
+      'query_var' => true,
+      'menu_icon' => '',
+      'rewrite' => true,
+      'capability_type' => 'post',
+      'hierarchical' => false,
+      'menu_position' => null,
+      'supports' => array('title', 'thumbnail', 'editor', 'page-attributes')
+  );
+  register_post_type( 'charities' , $args );
+}
+add_action('init', 'charities_register');
+
+
+?>

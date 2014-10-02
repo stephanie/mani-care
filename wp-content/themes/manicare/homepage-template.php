@@ -25,4 +25,4 @@ get_header(); ?>
 		</div>
 	<? endwhile; ?>
 
-<? wp_footer(); ?>
+<?php get_footer(); ?>

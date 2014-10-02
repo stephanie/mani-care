@@ -525,6 +525,13 @@ div#nav-paypal {
 	font-size: 15px;
 }
 
+.charity-line {
+	position: absolute;
+	top: 18px;
+	font-size: 13px;
+	font-style: italic;
+	right: 25px;
+}
 /* =Homepage template
 ----------------------------------------------- */
 
@@ -784,7 +791,7 @@ h1.basic-title {
 	background-color: transparent;
 	color: transparent;
 	padding: 10px; 
-	font-size: 14px;
+	font-size: 12px;
 	transition: background-color 0.5s ease,
 							color 0.5s ease;
 }

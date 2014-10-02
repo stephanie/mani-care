@@ -45,6 +45,9 @@
         <p class="slogan">
           the manicure to show you care
         </p>
+        <p class="charity-line">
+          10% of all proceeds donated to charity
+        </p>
     		<nav role="navigation" class="site-navigation main-navigation show-for-medium-up">
     			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
     		</nav><!-- .site-navigation .main-navigation -->
@@ -52,7 +55,8 @@
       <div class="sub-nav">
         <p class="reservation-hotline">
           <a href="tel:+1-862-305-0012" class="nav-phone">
-            Reservation Hotline: (862) 305-0012
+            <i class="fa fa-phone fa-lg"></i>
+            Call us at <span style="text-decoration:underline;">862 305 0012</span>
           </a>
         </p>
         <p class="sub-nav-btns">
